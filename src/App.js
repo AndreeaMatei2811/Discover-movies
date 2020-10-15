@@ -17,6 +17,7 @@ function App() {
                 fontWeight: "bold",
                 color: "red",
               }}
+              exact
             >
               Home
             </NavLink>
