@@ -1,44 +1,34 @@
 import React from "react";
 import { Switch, Route, NavLink } from "react-router-dom";
-import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
 import DiscoverMoviesPage from "./pages/DiscoverMoviesPage";
+import MoviePage from "../src/components/MoviePage";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Hello</header>
-      <nav>
+      <nav className="nav">
         <ul>
           <li>
             <NavLink
               to="/"
               activeStyle={{
                 fontWeight: "bold",
-                color: "red",
+                color: "#701223",
               }}
               exact
             >
               Home
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/about"
-              activeStyle={{
-                fontWeight: "bold",
-                color: "red",
-              }}
-            >
-              About
-            </NavLink>
-          </li>
+
           <li>
             <NavLink
               to="/discover"
               activeStyle={{
                 fontWeight: "bold",
-                color: "red",
+                color: "#701223",
               }}
             >
               Discover Movies
@@ -48,9 +38,9 @@ function App() {
       </nav>
 
       <Switch>
-        <Route path="/discover" component={DiscoverMoviesPage} />
-        <Route path="/about" component={AboutPage} />
-        <Route path="/" component={HomePage} />
+        <Route path="/movie/:imdbID" component={MoviePage} />
+        <Route path="/discover/:query?" component={DiscoverMoviesPage} />
+        <Route exact path="/" component={HomePage} />
       </Switch>
     </div>
   );
