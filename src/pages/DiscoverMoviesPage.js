@@ -43,13 +43,15 @@ export default function DiscoverMoviesPage() {
           message: error.message,
         });
       }
-      setSearchText(params.query);
+      setSearchText(queryParam);
     }
+
     fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.query]);
 
   function search() {
-    history.push(`discover/${searchText}`);
+    history.push(`/discover/${searchText}`);
   }
 
   console.log(movies);

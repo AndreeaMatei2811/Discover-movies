@@ -26,6 +26,7 @@ export default function MoviePage() {
       setMovieDetails({ status: "succes", data: response.data });
     }
     fetchDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.imdbID]);
 
   console.log("WHAT ARE PARAMS:", params);
@@ -36,11 +37,7 @@ export default function MoviePage() {
         {movieDetails.data?.Title} ({movieDetails.data?.Year})
       </h2>
       <h3>Rating: {movieDetails.data?.imdbRating}</h3>
-      <img
-        className="image"
-        src={movieDetails.data?.Poster}
-        alt={movieDetails.data?.Title}
-      />
+      <img className="image" src={movieDetails.data?.Poster} alt="movie" />
 
       <p>{movieDetails.data?.Plot}</p>
     </div>
