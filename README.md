@@ -1,4 +1,10 @@
+This project was created as an exercise for React Router.
+
+Check the app: https://discover-movies-am.netlify.app/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
 
 ## Available Scripts
 
